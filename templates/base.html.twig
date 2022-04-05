@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cui-Cuite - {% block title %}{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle` and uncomment the
+    following Encore helpers to start using Symfony UX #} {% block stylesheets
+    %} {#{{
+      encore_entry_link_tags("app")
+    }}#}
+
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    {% endblock %} {% block javascripts %} {#{{
+      encore_entry_script_tags("app")
+    }}#} {% endblock %}
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <div class="sidebar-content">
+          <a href="{{ path('index') }}">
+            <img
+              src="{{ asset('assets/images/logo/cuicuite.svg') }}"
+              alt=""
+              class="logo-sidebar"
+            />
+          </a>
+
+          <nav>
+              <ul>
+                <a href="{{ path('index') }}"><li>	
+                  <i class="fas fa-home"></i> Accueil</li></a>
+                  <a href="{{ path('products') }}"><li><i class="fas fa-glass-martini-alt"></i> Produits</li></a>
+                  {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a href="{{ path('login') }}"><li><i class="fas fa-user"></i></i> Connexion</li></a>
+                    <a href="{{ path('register') }}"><li><i class="fas fa-sign-in-alt"></i></i> Inscription</li></a>
+                  {% endif %}
+                  {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin') }}"><li><i class="fas fa-users-cog"></i> Admin</li></a>
+                  {% endif %}
+              </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="content">{% block body %} {% endblock %}</div>
+    </div>
+  </body>
+</html>

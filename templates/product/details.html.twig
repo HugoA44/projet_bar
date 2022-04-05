@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %} {% block title %}Produits{% endblock %} {% block
+    body %}
+    <div class="products">
+
+        <div class="product-detail">
+            <div class="detail-image">
+                <img
+                    src="{{ asset('assets/images/'~ product.productType.name ~ "/" ~ product.image) }}"
+                    alt=""
+                    srcset=""
+                />
+            </div>
+            
+            <div class="detail-content">
+                <h2 class="detail-title">{{ product.name }}</h2>
+                <div class="typeandcategory">
+                    <span class="type">{{ product.productType.name }}</span>
+                    <span class="category"> -> {{ product.category.name }}</span>
+                    {% if product.drinkInfo %}
+                    <span class="drinktype">{% for info in product.drinkInfo.type %} -> {{ info.name }} {% endfor %}</span>
+                    {% endif %}
+                </div>
+                <span class="detail-price">{{ product.price }} €</span>
+                <p class="detail-description">{{ product.description }}</p>
+                <div class="detail-infos">
+                    {% if product.foodInfo %}
+                    <h3>Infos nutritions</h3>
+                        <ul class="food-info">
+                            <li>Gras : {{ product.foodInfo.fat }}</li>
+                            <li>Énergie : {{ product.foodInfo.energy }}</li>
+                            <li>Glucides : {{ product.foodInfo.glucid }}</li>
+                            <li>Protéines : {{ product.foodInfo.protein }}</li>
+                            <li>Sucre : {{ product.foodInfo.sugar }}</li>
+                            <li>Sel : {{ product.foodInfo.salt }}</li>
+                        </ul>
+                    {% endif %}
+                    {% if product.drinkInfo %}
+                    <h3>Infos Boisson</h3>
+                        <ul class="food-info">
+                            <li>Litre : {{ product.drinkInfo.liter }}</li>
+                            <li>Alcool : {{ product.drinkInfo.alcohol }}</li>
+        
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+
+        
+
+        
+      </a>
+    
+
+    </div>
+    
+    {% endblock %}
+    

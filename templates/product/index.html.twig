@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %} {% block title %}Produits{% endblock %} {% block
+body %}
+
+<div class="products">
+  {% for product in products %}
+  <a href="{{ path('product', { id: product.id }) }}">
+    <div class="product">
+      <img
+        src="{{ asset('assets/images/'~ product.productType.name ~ "/" ~ product.image) }}"
+        alt=""
+        srcset=""
+      />
+      <h2>{{ product.name }}</h2>
+    </div>
+  </a>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

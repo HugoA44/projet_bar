@@ -1,0 +1,21 @@
+index:
+   path: /
+   controller: App\Controller\DefaultController::index
+
+products:
+   path: /products
+   controller: App\Controller\ProductController::index
+
+admin:
+    path: /admin
+    controller: App\Controller\AdminController::index
+
+
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+register:
+    path: /register
+    controller: App\Controller\RegistrationController::register

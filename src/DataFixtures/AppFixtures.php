@@ -2,9 +2,6 @@
 
 namespace App\DataFixtures;
 
-
-
-
 use App\Entity\ProductType;
 use App\Entity\TypeCategory;
 use App\Entity\User;

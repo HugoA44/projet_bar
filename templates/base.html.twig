@@ -5,6 +5,7 @@
 		<title>Cui-Cuite -
 			{% block title %}{% endblock %}
 		</title>
+<<<<<<< Updated upstream
 		{# Run `composer require symfony/webpack-encore-bundle` and uncomment the
 																				    following Encore helpers to start using Symfony UX #}
 		{% block stylesheets
@@ -12,10 +13,16 @@
 			{#{{
 																														      encore_entry_link_tags("app")
 																														    }}#}
+=======
+
+		{% block stylesheets
+    %}
+>>>>>>> Stashed changes
 
 			<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}"/>
 			<link rel="stylesheet" href="{{ asset('assets/css/products.css') }}"/>
 			<link rel="stylesheet" href="{{ asset('assets/css/detail.css') }}"/>
+<<<<<<< Updated upstream
 			<link rel="stylesheet" href="{{ asset('assets/css/accueil.css') }}"/>
 			<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		{% endblock %}
@@ -23,6 +30,13 @@
 			{#{{
 																														      encore_entry_script_tags("app")
 																														    }}#}
+=======
+			<link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}"/>
+			<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		{% endblock %}
+		{% block javascripts %}
+
+>>>>>>> Stashed changes
 		{% endblock %}
 	</head>
 	<body>

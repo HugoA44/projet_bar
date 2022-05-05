@@ -1,0 +1,56 @@
+.admin{
+  display: flex;
+  flex-direction: row;
+}
+
+.quatrecentquatre{
+  color:white;
+}
+table.redTable {
+    border: 2px solid #ffcf00;
+    background-color: #ffffff;
+    width: 40%;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 50px auto;
+  }
+  table.redTable td,
+  table.redTable th {
+    border: 1px solid #aaaaaa;
+    padding: 3px 2px;
+  }
+  table.redTable tbody td {
+    font-size: 13px;
+  }
+  table.redTable tr:nth-child(even) {
+    background: #f5f4c7;
+  }
+  table.redTable thead {
+    background: #ffcf00;
+  }
+  table.redTable thead th {
+    font-size: 19px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    border-left: 2px solid #ffcf00;
+  }
+  table.redTable thead th:first-child {
+    border-left: none;php bin/console make:form
+  }
+  
+  table.redTable tbody tr a {
+    text-decoration: underline;
+    color: blue;
+  }
+  
+  table.redTable tbody tr img.admin-image {
+    width: 80px;
+  }
+  
+  button.admin-addproduct {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  

@@ -1,9 +1,79 @@
 .home-content{
     color: white;
     padding: 0 5%;
+    position: relative;
 }
 
 .home-content img {
     width: 100%;
     height: auto;
+}
+
+.beer { 
+    position: fixed;
+    max-width: 1000px;
+    max-height: 1000px;
+    right: -350px;
+    object-fit: contain;
+    transform: rotate(-20deg);
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+.verre { 
+    position: fixed;
+    max-width: 700px;
+    max-height: 700px;
+    right: 850px;
+    bottom: -150px;
+    animation-delay: 1s;
+    object-fit: contain;
+    transform: rotate(30deg);
+    animation-name: floatingVerre;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    filter: blur(0px);
+}
+.saucisson { 
+
+    position: fixed;
+    
+    
+    animation-name: floatingS;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    filter: blur(0px);
+    right: 300px;
+}
+.saucisson h1{
+    z-index: 5;
+    transform: translateY(-35px);
+}
+.saucisson img{
+    z-index: -1;
+    max-width: 700px;
+    max-height: 700px;
+    transform: translateY(35px);
+    object-fit: contain;
+    transform: rotate(-90deg);
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px) rotate(-20deg); }
+    50%  { transform: translate(0, 25px) rotate(-20deg); }
+    100%   { transform: translate(0, -0px) rotate(-20deg); }   
+}
+@keyframes floatingS {
+    0%, 60% { transform: translate(0,  1000px) ; }
+    70%, 90%  { transform: translate(0, -700px) ; }
+    100%   { transform: translate(0, 1000px) ; }   
+}
+@keyframes floatingVerre {
+    0% { transform: translate(0,  0px) rotate(30deg); }
+    50%  { transform: translate(0, 25px) rotate(30deg); }
+    100%   { transform: translate(0, -0px) rotate(30deg); }   
 }

@@ -1,16 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %}Accueil {% endblock %} {% block
+body %}
+<div class="home-content">
+  <h1>Bonjour et bienvenue sur Cuicuite !</h1>
 
-{% block title %}Accueil
-{% endblock %}
+  <p>
+    Notre site internet référence les boissons, les cocktails et les snacks dans
+    votre bar préféré !!!! lol
+  </p>
 
-{% block body %}
-	<div class="home-content">
+  <img src="{{ asset('assets/images/bannercui.png') }}" class="admin-image" />
 
-		<h1>Bonjour et bienvenue sur Cuicuite !</h1>
+  <img src="{{ asset('assets/images/beer.png') }}" class="beer" />
+  <img src="{{ asset('assets/images/verre.png') }}" class="verre" />
+  <div class="saucisson">
+    <h1>
+      Un saucisson avec ceci ? 😋 <br />
+      Celui ci est fumé au bois de hêtre, un vrai régal
+    </h1>
 
-		<p>Notre site internet référence les boissons, les cocktails et les snacks dans votre bar préféré !!!! lol</p>
-
-		<img src="{{ asset('assets/images/bannercui.png') }}" class="admin-image"/>
-
-	</div>
+    <img src="{{ asset('assets/images/saucisson.png') }}" />
+  </div>
+</div>
 {% endblock %}

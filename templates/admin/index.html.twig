@@ -1,1 +1,49 @@
-{% extends 'base.html.twig' %} {% block title %}Administration {% endblock %}
+{% extends 'base.html.twig' %} {% block title %}Easter Egg en page 404{%
+endblock %} {% block body %}
+<div class="admin">
+  {# <a href="{{ path('adminAddProduct') }}"><button>Add product</button></a> #}
+  <table class="redTable">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }} €</td>
+        <td>
+          <img src="{{ asset('assets/images/'~ product.productType.name ~ "/" ~ product.image)
+
+
+
+
+          }}" class="admin-image"/>
+        </td>
+        <td>
+          <a href=" {{ path('product', { id: product.id }) }} "
+            ><span class="remove">Détails</span></a
+          >
+
+          {#
+          <a href="{{ path('adminUpdateProduct', { id: product.id }) }}"
+            ><span class="remove">Modifier</span></a
+          >
+
+          <a href="{{ path('adminRemoveProduct', { id: product.id }) }}"
+            ><span class="remove">Supprimer</span></a
+          >
+          #}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

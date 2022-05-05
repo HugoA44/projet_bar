@@ -42,31 +42,38 @@
 							<a href="{{ path('products') }}">
 								<li>
 									<i class="fas fa-glass-martini-alt"></i>
-									Produits</li>
+									Produits
+								</li>
 							</a>
 							{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
 								<a href="{{ path('login') }}">
 									<li>
 										<i class="fas fa-user"></i>
-									</li>
-								</i>
-								Connexion</li>
+
+								Connexion
+							</li>
 						</a>
 						<a href="{{ path('register') }}">
 							<li>
 								<i class="fas fa-sign-in-alt"></i>
-							</li>
-						</i>
+
 						Inscription</li>
 				</a>
 			{% endif %}
 			{% if is_granted('ROLE_ADMIN') %}
-				<a href="{{ path('admin') }}">
-					<li>
-						<i class="fas fa-users-cog"></i>
-						Admin</li>
+			<a href="{{ path('admin') }}">
+				<li>
+					<i class="fas fa-users-cog"></i>
+					Admin</li>
 				</a>
-			{% endif %}
+				{% endif %}
+				{% if  is_granted('IS_AUTHENTICATED_FULLY') %}
+					<a href="{{ path('logout') }}">
+						<li>
+							<i class="fas fa-door-open"></i>
+Se déconnecter</li>
+					</a>
+	{% endif %}
 		</ul>
 	</body>
 </html></nav></div></div><div class="content"> {% block body %}{% endblock %}</div></div></body></html>

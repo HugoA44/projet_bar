@@ -1,43 +1,47 @@
-{% extends 'base.html.twig' %}
-{% block title %}Produits
-{% endblock %}
-{% block
+{% extends 'base.html.twig' %} {% block title %}Produits {% endblock %} {% block
 body %}
-	<div class="bloc-blanc"></div>
-	<div class="nav-type">
-		<ul class="type-list">
+<div class="bloc-blanc"></div>
+<div class="nav-type">
+  <ul class="type-list">
+    {% for type in types %}
 
-			{% for type in types %}
-
-				<li class="type-element has-dropdown">
-					<a href="#
+    <li class="type-element has-dropdown">
+      <a
+        href="#
 																								          {# {{ path('product_by_type', { type: type.id }) }} #}
-																								          ">{{ type.name }}</a>
-					<ul class="category-list dropdown">
-						{% for categorie in type.category %}
-							<li class="category-element">
-								<a href="
+																								          "
+        >{{ type.name }}</a
+      >
+      <ul class="category-list dropdown">
+        {% for categorie in type.category %}
+        <li class="category-element">
+          <a
+            href="
 																											                #
-																											                {# {{ path('product_by_category', { category : categorie.id }) }} #}
-																											                ">{{ categorie.name }}</a>
-							</li>
-						{% endfor %}
-					</ul>
-				</li>
+																											                {# {{
+              path('product_by_category', { category: categorie.id })
+            }} #}
+																											                "
+            >{{ categorie.name }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
 
-			{% endfor %}
-		</ul>
-	</div>
-	<div class="products">
-		{% for product in products %}
-			<a href="{{ path('product', { id: product.id }) }}">
-				<div class="product">
-					<img src={{ product.image }} alt="" srcset=""/>
-					<h2>{{ product.name }}</h2>
-				</div>
-			</a>
+    {% endfor %}
+  </ul>
+</div>
+<div class="products">
+  {% for product in products %}
+  <a href="{{ path('product', { id: product.id }) }}">
+    <div class="product">
+      <img src="{{ product.image }}" alt="" srcset="" />
+      <h2>{{ product.name }}</h2>
+    </div>
+  </a>
 
-		{% endfor %}
-	</div>
+  {% endfor %}
+</div>
 
 {% endblock %}

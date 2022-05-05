@@ -1,19 +1,33 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %}Register{% endblock %} {% block
+body %}
 
-{% block title %}Register{% endblock %}
+<h1 style="text-align: center; color: white">S'inscrire</h1>
 
-{% block body %}
+{{ form_start(registrationForm) }}
+{{
+  form_label(registrationForm.username, "Pseudo", {
+    attr: { class: "form-label" }
+  })
+}}
+{{
+  form_widget(registrationForm.username, { attr: { class: "form-control" } })
+}}
+{{
+  form_label(registrationForm.plainPassword, "Mot de passe", {
+    attr: { class: "form-label" }
+  })
+}}
+{{
+  form_widget(registrationForm.plainPassword, {
+    attr: { class: "form-control" }
+  })
+}}
+{{
+  form_row(registrationForm.agreeTerms, {
+    label: "Accecter le conditions générales d'utilisation"
+  })
+}}
 
-
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+<button type="submit" class="btn">S'inscrire</button>
+{{ form_end(registrationForm) }}
 {% endblock %}

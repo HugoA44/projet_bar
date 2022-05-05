@@ -152,7 +152,7 @@ class AdminController extends AbstractController
 
         // Création du formulaire
         $form = $this->createFormBuilder($product)
-            ->add('name', TextType::class, array('required' => true))
+            ->add('name', TextType::class, array('required' => true, 'data_class' => 'form-control'))
             ->add('description', TextType::class, array('required' => true))
             ->add('image', FileType::class, ['data_class' => null, 'empty_data' => $product->getImage(), 'required' => false])
             ->add('price', IntegerType::class, array('required' => true))

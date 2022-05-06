@@ -22,9 +22,9 @@ Feature:
 
     Scenario: Je me connecte
         Given Le compte a comme identifiant "admin"
-        Given Le compte a comme mot de passe "rootroot"
+        Given Le compte a comme mot de passe "root"
         When Je donne l’identifiant "admin"
-        When Je donne le mot de passe "rootroot"
+        When Je donne le mot de passe "root"
         Then Je suis donc connecté en administrateur
 
     Scenario: Je supprime un produit
@@ -39,9 +39,9 @@ Feature:
 
     Scenario: Je me connecte
         Given Le compte a comme identifiant "admin"
-        Given Le compte a comme mot de passe "rootroot"
+        Given Le compte a comme mot de passe "root"
         When Je donne l’identifiant "admin"
-        When Je donne le mot de passe "rootroot"
+        When Je donne le mot de passe "root"
         Then Je suis donc connecté en administrateur
 
     Scenario: Je modifie un produit
@@ -56,9 +56,9 @@ Feature:
 
     Scenario: Je me connecte
         Given Le compte a comme identifiant "user"
-        Given Le compte a comme mot de passe "rootroot"
+        Given Le compte a comme mot de passe "root"
         When Je donne l’identifiant "user"
-        When Je donne le mot de passe "rootroot"
+        When Je donne le mot de passe "root"
         Then Je suis donc connecté en utilisateur
 
     Scenario: J'essaye d'ajouter un produit sans être administrateur
@@ -73,9 +73,9 @@ Feature:
 
     Scenario: Je me connecte
         Given Le compte a comme identifiant "user"
-        Given Le compte a comme mot de passe "rootroot"
+        Given Le compte a comme mot de passe "root"
         When Je donne l’identifiant "user"
-        When Je donne le mot de passe "rootroot"
+        When Je donne le mot de passe "root"
         Then Je suis donc connecté en utilisateur
 
 
@@ -94,9 +94,9 @@ Feature:
 
     Scenario: Je me connecte
         Given Le compte a comme identifiant "user"
-        Given Le compte a comme mot de passe "rootroot"
+        Given Le compte a comme mot de passe "root"
         When Je donne l’identifiant "user"
-        When Je donne le mot de passe "rootroot"
+        When Je donne le mot de passe "root"
         Then Je suis donc connecté en utilisateur
 
     Scenario: Je commande un produit

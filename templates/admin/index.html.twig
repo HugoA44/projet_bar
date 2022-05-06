@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %} {% block title %}Administration{% endblock %} {%
 block body %}
 <div class="admin">
-  <a href="{{ path('adminAddProduct') }}"><button>Add product</button></a>
+  <a href="{{ path('adminAddProduct') }}"
+    ><button>Ajouter un produit</button></a
+  >
   <table class="redTable">
     <thead>
       <tr>
@@ -20,6 +22,7 @@ block body %}
         <td>{{ product.price }} €</td>
         <td>
           <img src="{{ asset('assets/images/'~ product.productType.name ~ "/" ~ product.image)
+
 
           }}" class="admin-image" />
         </td>

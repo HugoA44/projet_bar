@@ -47,7 +47,7 @@ class AdminController extends AbstractController
         $form = $this->createFormBuilder($product)
             ->add('name', TextType::class, array('required' => true))
             ->add('description', TextType::class, array('required' => true))
-            ->add('image', FileType::class, array('required' => true))
+            ->add('image', FileType::class, array('required' => false))
             ->add('price', IntegerType::class, array('required' => true))
             ->add(
                 'productType',
@@ -70,7 +70,7 @@ class AdminController extends AbstractController
                 array('required' => true)
             )
             ->add('save', SubmitType::class, [
-                'label' => 'Add',
+                'label' => 'Ajouter',
                 'attr' => ['class' => 'btn-full']
 
             ])
@@ -87,13 +87,17 @@ class AdminController extends AbstractController
             $file = $form->get('image')->getData();
             //Récupération des données
             $product = $form->getData();
-            $product->setImage($file->getClientOriginalName());
+            if ($file) {
+                $product->setImage($file->getClientOriginalName());
+            }
             //Sauvegardes des données
             $entityManager->persist($product);
             //Execution de l'insertion des données
             $entityManager->flush();
             //Sauvegarde du fichier
-            $file->move('assets/images/' . $product->getProductType()->getName() . '/', $file->getClientOriginalName());
+            if ($file) {
+                $file->move('assets/images/' . $product->getProductType()->getName() . '/', $file->getClientOriginalName());
+            }
         }
 
 

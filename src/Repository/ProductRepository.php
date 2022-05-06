@@ -56,10 +56,10 @@ class ProductRepository extends ServiceEntityRepository
     public function findByProductType($value): ?Product
     {
         return $this->createQueryBuilder('p')
-        ->where('p.type = :type')
-        ->setParameter('type', $value)
-        ->getQuery()
-        ->execute();
+            ->where('p.type = :type')
+            ->setParameter('type', $value)
+            ->getQuery()
+            ->execute();
     }
 
     // /**
@@ -69,10 +69,9 @@ class ProductRepository extends ServiceEntityRepository
     public function findByCategory($value): ?Product
     {
         return $this->createQueryBuilder('p')
-        ->where('p.TypeCategory = :type')
-        ->setParameter('type', $value)
-        ->getQuery()
-        ->execute();
+            ->where('p.TypeCategory = :type')
+            ->setParameter('type', $value)
+            ->getQuery()
+            ->execute();
     }
-
 }
